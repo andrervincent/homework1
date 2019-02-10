@@ -1,15 +1,12 @@
 (define (reverse-general L)
-  (define reverseList ()) ;;initializes the reverseList - empty
-  (cond
-   ((null? 'L) ;; if L is an empty list - 
-     #t        ;; function is done, return first list
-      )
-   (else '#f) ;; if L is not an empty list - 
-   )
+  (cond ((null? L) '()) ;; if the param is null return the param
+        ((list? L)      ;; if the param is a list, 
+         (append (reverse-general (cdr L)) ;; add the first element to 
+                 (list (reverse-general (car L))) ;; the end of the list
+                 )
+         )
+        (else L)
+        )
   )
 
-(define (AddToNewList origList newList)
-  (cons 
-   (car originList)
-   newlist)
-  )
+(display (deep-reverse '(1 2 (7 8))))
