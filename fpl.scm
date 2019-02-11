@@ -14,13 +14,6 @@
 
 ;; Sum of list problem
 (define (sum-up-numbers L)
-    (cond 
-     ((null? L) '())
-     (else ;(display '(it's fine))
-      (+ (car L) (sum-up-numbers (cdr L)))
-           )
-     )
-  )
-
-
+  (if (null? L) 0		;; null lists return 0
+      (+ (car L) (sum-up-numbers (cdr L))))) ;; 
 (sum-up-numbers '(1 2 3))
