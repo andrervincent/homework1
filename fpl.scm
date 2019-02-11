@@ -13,16 +13,16 @@
 (display (deep-reverse '(1 2 (7 8))))
 
 ;; Sum of list problem - no nested lists
-(define (sum-numbers L)
+(define (sum-up-numbers L)
   (if (null? L) 0
-    (if (not (number? (car L))) (+ 0 (sum-numbers (cdr L))) ;; for non-integer elements
-      (+ (car L) (sum-numbers (cdr L)))
+    (if (not (number? (car L))) (+ 0 (sum-up-numbers (cdr L))) ;; for non-integer elements
+      (+ (car L) (sum-up-numbers (cdr L)))
       )
     )
   
 )
 
-(display (sum-numbers '(2 1 B 5 3)))
+(display (sum-up-numbers '(2 1 B 5 3)))
 ;; Sum of list problem - nested lists
 (define (sum-up-numbers-general L)
  (if
